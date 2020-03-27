@@ -140,93 +140,13 @@ include('../includes/dbh.inc.php');
     <li class="nav-item"><a class="nav-link" href="request.php"><i class="fa fa-user-plus"></i>Requests</a></li>
     <li class="nav-item"><a class="nav-link" href="photographers.php"><i class="fa fa-camera"></i>Photographers</a></li>
     <li class="nav-item"><a class="nav-link" href="requester.php"><i class="fa fa-users"></i>Requester</a></li>
+    <li class="nav-item"><a class="nav-link" href="sellreport.php"><i class="fa fa-pie-chart"></i>Sales Report</a></li>
     <li class="nav-item"><a class="nav-link" href="workreport.php"><i class="fa fa-line-chart  "></i>Work Report</a></li>
     <li class="nav-item"><a class="nav-link" href="adminchangepassword.php"><i class="fa fa-key "></i>Change Password</a></li>
     </ul>
     </div>
     </nav>
     <!-- End side bar -->
-
-
-
-
-
-
-
-<div class="col-sm-9 col-md-10 mt-5 text-center ">
-<form action="" method="POST" class="d-print-none form">
-<div class="form-row">
-<div class="form-group ">FROM
-<input type="date" class="form-control" id="startdate" name="startdate">
-</div> 
-<div class="form-group ">TO
-<input type="date" class="form-control" id="enddate" name="enddate">
-</div>
-<div class="form-group">
-<br><input type="submit" class="btn btn-secondary " name="searchsubmit" value="Search">
-</div>
-</div>
-</form>
-<?php
-if(isset($_REQUEST['searchsubmit'])){
-    $startdate = $_REQUEST['startdate'];
-    $enddate = $_REQUEST['enddate'];
-    $sql = "SELECT * FROM assignwork WHERE assign_date BETWEEN '$startdate' AND '$enddate'";
-    $result = $conn->query($sql);
-    if($result->num_rows > 0){
-        echo '<p class="text-center mainmenu-area" style="margin-top:20px; font-size:30px; color:white;">Details</p>';
-
-        echo '<table  class=" table"style="background:#dff0d8; color:Black;">';
-        echo '<thead>';
-        echo '<tr>';
-        echo '<th scope="col">Req ID</th>';
-        echo '<th scope="col">Reqest Info</th>';
-        echo '<th scope="col">Name</th>';
-        echo '<th scope="col">Address</th>';
-        echo '<th scope="col">City</th>';
-        echo '<th scope="col">Mobile</th>';
-        echo '<th scope="col">Photographer</th>';
-        echo '<th scope="col">Booking Date</th>';
-        echo '</tr>';
-        echo '</thead>';
-        echo '<tbody>';
-        while($row = $result->fetch_assoc()){
-            echo '<tr>';
-            echo '<td>'.$row['request_id'].'</td>';
-            echo '<td>'.$row['request_info'].'</td>';
-            echo '<td>'.$row['requester_name'].'</td>';
-            echo '<td>'.$row['requester_add2'].'</td>';
-            echo '<td>'.$row['requester_city'].'</td>';
-            echo '<td>'.$row['requester_mobile'].'</td>';
-            echo '<td>'.$row['assign_tech'].'</td>';
-            echo '<td>'.$row['assign_date'].'</td>';
-            echo '</tr>';
-        }
-        echo '<tr>';
-        echo '<td>';
-        echo '<input type="submit" class="btn btn-danger d-print-none" value="Print" onClick="window.print()">';
-        echo '</td>';
-        echo '</tr>';
-        echo '</tbody>';
-        echo '</table>';
-    }
-} 
-
-
-
-
-?>
-
-</div>
-
-
-
-
-
-
-
-
-
     
 </div> <!--End row -->
 </div>   
@@ -273,7 +193,7 @@ if(isset($_REQUEST['searchsubmit'])){
 
 
 
-<div class="footer-top-area">
+    <div class="footer-top-area">
         <div class="zigzag-bottom"></div>
         <div class="container">
             <div class="row">
@@ -291,29 +211,40 @@ if(isset($_REQUEST['searchsubmit'])){
                     </div>
                 </div>
                 
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-3 col-sm-6">
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">User Navigation </h2>
                         <ul>
-                            <li><a href="../login.php">Login</a></li>
-                            <li><a href="../contact.php">Contact</a></li>
-                            <li><a href="../privacypolicy.php">Privacy Policy</a></li>
-                            <li><a href="../t&c.php">T&C</a></li>
-                            <li><a href="../index.php">Front page</a></li>
+                            <li><a href="#">Login</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">T&C</a></li>
+                            <li><a href="index.php">Front page</a></li>
                         </ul>                        
                     </div>
                 </div>
                 
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-3 col-sm-6">
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">Categories</h2>
                         <ul>
-                            <li><a href="../shop.php">services</a></li>
+                            <li><a href="#">services</a></li>
                         </ul>                        
                     </div>
                 </div>
                 
-                
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-newsletter">
+                        <h2 class="footer-wid-title">Newsletter</h2>
+                        <p>Sign up to our newsletter and get exclusive offers straight to your inbox!</p>
+                        <div class="newsletter-form">
+                            <form action="#">
+                                <input type="email" placeholder="Type your email">
+                                <input type="submit" value="Subscribe">
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div> <!-- End footer top area -->

@@ -126,6 +126,8 @@ include('../includes/dbh.inc.php');
 
 
 
+
+
 <!--start container -->
 <div class="container-fluid" style="margin-top:40px;">
  <!--start row --><div class="row">
@@ -138,6 +140,7 @@ include('../includes/dbh.inc.php');
     <li class="nav-item"><a class="nav-link" href="request.php"><i class="fa fa-user-plus"></i>Requests</a></li>
     <li class="nav-item"><a class="nav-link" href="photographers.php"><i class="fa fa-camera"></i>Photographers</a></li>
     <li class="nav-item"><a class="nav-link" href="requester.php"><i class="fa fa-users"></i>Requester</a></li>
+    <li class="nav-item"><a class="nav-link" href="sellreport.php"><i class="fa fa-pie-chart"></i>Sales Report</a></li>
     <li class="nav-item"><a class="nav-link" href="workreport.php"><i class="fa fa-line-chart  "></i>Work Report</a></li>
     <li class="nav-item"><a class="nav-link" href="adminchangepassword.php"><i class="fa fa-key "></i>Change Password</a></li>
     </ul>
@@ -145,42 +148,14 @@ include('../includes/dbh.inc.php');
     </nav>
     <!-- End side bar -->
 
-
-<?php
-
-$sql = "SELECT * FROM usersubmitrequest";
-$result = $conn->query($sql);
-$submitrequest = $result->num_rows;
-
-
-$sql = "SELECT * FROM assignwork";
-$result = $conn->query($sql);
-$assignwork = $result->num_rows;
-
-
-$sql = "SELECT * FROM Photographers";
-$result = $conn->query($sql);
-$totaltech = $result->num_rows;
-
-?>
-
-
-
-
-
-
-
-
-
-
 <div class="col-sm-9 col-md-10">
 <div class="row text-center mx-5">
 <div class="col-sm-4 mt-5">
 <div class="card text-white bg-success mb-3" >
 <div class="card-header">Request Received</div>
 <div class="card-body">
-<h4 class="card-title"><?php echo $submitrequest; ?> </h4>
-<a class="btn text-white" href="request.php">View</a>
+<h4 class="card-title">43 </h4>
+<a class="btn text-white" href="#">View</a>
 </div>
 </div>
 
@@ -191,8 +166,8 @@ $totaltech = $result->num_rows;
 <div class="card text-white bg-success mb-3" >
 <div class="card-header">Assigned Work</div>
 <div class="card-body">
-<h4 class="card-title"><?php echo $assignwork; ?></h4>
-<a class="btn text-white" href="workorder.php">View</a>
+<h4 class="card-title">23</h4>
+<a class="btn text-white" href="#">View</a>
 </div>
 </div>
 
@@ -203,8 +178,8 @@ $totaltech = $result->num_rows;
 <div class="card text-white bg-success mb-3" >
 <div class="card-header">No. of Photographers</div>
 <div class="card-body">
-<h4 class="card-title"><?php echo $totaltech; ?></h4>
-<a class="btn text-white" href="photographers.php">View</a>
+<h4 class="card-title">4</h4>
+<a class="btn text-white" href="#">View</a>
 </div>
 </div>
 
@@ -297,7 +272,7 @@ if($result->num_rows > 0){
 
 
 
-<div class="footer-top-area">
+    <div class="footer-top-area">
         <div class="zigzag-bottom"></div>
         <div class="container">
             <div class="row">
@@ -315,29 +290,40 @@ if($result->num_rows > 0){
                     </div>
                 </div>
                 
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-3 col-sm-6">
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">User Navigation </h2>
                         <ul>
-                            <li><a href="../login.php">Login</a></li>
-                            <li><a href="../contact.php">Contact</a></li>
-                            <li><a href="../privacypolicy.php">Privacy Policy</a></li>
-                            <li><a href="../t&c.php">T&C</a></li>
-                            <li><a href="../index.php">Front page</a></li>
+                            <li><a href="#">Login</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">T&C</a></li>
+                            <li><a href="index.php">Front page</a></li>
                         </ul>                        
                     </div>
                 </div>
                 
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-3 col-sm-6">
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">Categories</h2>
                         <ul>
-                            <li><a href="../shop.php">services</a></li>
+                            <li><a href="#">services</a></li>
                         </ul>                        
                     </div>
                 </div>
                 
-                
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-newsletter">
+                        <h2 class="footer-wid-title">Newsletter</h2>
+                        <p>Sign up to our newsletter and get exclusive offers straight to your inbox!</p>
+                        <div class="newsletter-form">
+                            <form action="#">
+                                <input type="email" placeholder="Type your email">
+                                <input type="submit" value="Subscribe">
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div> <!-- End footer top area -->

@@ -169,6 +169,7 @@ if(isset($_REQUEST['passupdate'])){
     <li class="nav-item"><a class="nav-link" href="request.php"><i class="fa fa-user-plus"></i>Requests</a></li>
     <li class="nav-item"><a class="nav-link" href="photographers.php"><i class="fa fa-camera"></i>Photographers</a></li>
     <li class="nav-item"><a class="nav-link" href="requester.php"><i class="fa fa-users"></i>Requester</a></li>
+    <li class="nav-item"><a class="nav-link" href="sellreport.php"><i class="fa fa-pie-chart"></i>Sales Report</a></li>
     <li class="nav-item"><a class="nav-link" href="workreport.php"><i class="fa fa-line-chart  "></i>Work Report</a></li>
     <li class="nav-item"><a class="nav-link" href="adminchangepassword.php"><i class="fa fa-key "></i>Change Password</a></li>
     </ul>
@@ -248,7 +249,7 @@ if(isset($_REQUEST['passupdate'])){
 
 
 
-<div class="footer-top-area">
+    <div class="footer-top-area">
         <div class="zigzag-bottom"></div>
         <div class="container">
             <div class="row">
@@ -266,29 +267,40 @@ if(isset($_REQUEST['passupdate'])){
                     </div>
                 </div>
                 
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-3 col-sm-6">
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">User Navigation </h2>
                         <ul>
-                            <li><a href="../login.php">Login</a></li>
-                            <li><a href="../contact.php">Contact</a></li>
-                            <li><a href="../privacypolicy.php">Privacy Policy</a></li>
-                            <li><a href="../t&c.php">T&C</a></li>
-                            <li><a href="../index.php">Front page</a></li>
+                            <li><a href="#">Login</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">T&C</a></li>
+                            <li><a href="index.php">Front page</a></li>
                         </ul>                        
                     </div>
                 </div>
                 
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-3 col-sm-6">
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">Categories</h2>
                         <ul>
-                            <li><a href="../shop.php">services</a></li>
+                            <li><a href="#">services</a></li>
                         </ul>                        
                     </div>
                 </div>
                 
-                
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-newsletter">
+                        <h2 class="footer-wid-title">Newsletter</h2>
+                        <p>Sign up to our newsletter and get exclusive offers straight to your inbox!</p>
+                        <div class="newsletter-form">
+                            <form action="#">
+                                <input type="email" placeholder="Type your email">
+                                <input type="submit" value="Subscribe">
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div> <!-- End footer top area -->
