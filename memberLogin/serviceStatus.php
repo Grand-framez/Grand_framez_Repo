@@ -174,6 +174,122 @@ if($_SESSION['is_login']){
 
 
 
+<div class="form" style="margin-top: -130px";>
+    <form  action="" method="post" class="mx-5">
+    <div class="form-group col-md-12">
+    <div class="form-group">
+            
+              Enter Request ID:<span class="req">*</span>
+            
+            <input type="number"  name="checkid" id="checkid" >
+          </div>
+          </div>
+          <button type="submit" name="searchrequest" class="button button-block"/>Search</button>
+         
+         </form>
+         
+         <?php
+            if(isset($_REQUEST['checkid'])){
+                if($_REQUEST['checkid'] == ""){
+                    $msg = '<div class="alert alert-warning col-sm-6 ml-5 mt-2" role="alert"> FILL ALL FIELDS </div>';
+                } else {
+                    $sql = "SELECT * FROM assignwork WHERE request_id = {$_REQUEST['checkid']}";
+                    $result = $conn->query($sql);
+                    $row = $result->fetch_assoc();
+                    if(($row['request_id'] == $_REQUEST['checkid'])){ ?>
+        <br><br>
+                    <h3 class="text-center mt-5">Assigned Booking Details</h3>
+                    <table class="table table-bordered">
+                    <tbody>
+                    <tr>
+                    <td>Request ID</td>
+                    <td><?php if(isset($row['request_id'])){echo $row['request_id'];} ?></td>
+                    </tr>
+        
+                    <tr>
+                    <td>Request Info</td>
+                    <td><?php if(isset($row['request_info'])){echo $row['request_info'];} ?></td>
+                    </tr>
+        
+                    <tr>
+                    <td>Request Description</td>
+                    <td><?php if(isset($row['request_desc'])){echo $row['request_desc'];} ?></td>
+                    </tr>
+        
+                    <tr>
+                    <td>Name</td>
+                    <td><?php if(isset($row['requester_name'])){echo $row['requester_name'];} ?></td>
+                    </tr>
+        
+                    <tr>
+                    <td>Address line 1</td>
+                    <td><?php if(isset($row['requester_add1'])){echo $row['requester_add1'];} ?></td>
+                    </tr>
+        
+                    <tr>
+                    <td>Address line 2</td>
+                    <td><?php if(isset($row['requester_add2'])){echo $row['requester_add2'];} ?></td>
+                    </tr>
+        
+                    <tr>
+                    <td>City</td>
+                    <td><?php if(isset($row['requester_city'])){echo $row['requester_city'];} ?></td>
+                    </tr>
+        
+                    <tr>
+                    <td>State</td>
+                    <td><?php if(isset($row['requester_state'])){echo $row['requester_state'];} ?></td>
+                    </tr>
+        
+                    <tr>
+                    <td>Pin Code</td>
+                    <td><?php if(isset($row['requester_zip'])){echo $row['requester_zip'];} ?></td>
+                    </tr>
+        
+                    <tr>
+                    <td>E-mail</td>
+                    <td><?php if(isset($row['requester_email'])){echo $row['requester_email'];} ?></td>
+                    </tr>
+        
+                    <tr>
+                    <td>Mobile</td>
+                    <td><?php if(isset($row['requester_mobile'])){echo $row['requester_mobile'];} ?></td>
+                    </tr>
+        
+                    <tr>
+                    <td>Assigned Booking Date</td>
+                    <td><?php if(isset($row['assign_date'])){echo $row['assign_date'];} ?></td>
+                    </tr>
+        
+                    <tr>
+                    <td>Assigned Photographer</td>
+                    <td><?php if(isset($row['assign_tech'])){echo $row['assign_tech'];} ?></td>
+                    </tr>
+        
+                    <tr>
+                    <td>Customer Sign</td>
+                    <td></td>
+                    </tr>
+        
+                    <tr>
+                    <td>Photographer Sign</td>
+                    <td></td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    <div class="text-center">
+                    <form action="" class="d-print-none">
+                    <input class="btn btn-danger" type="submit" value="print" onclick="window.print()">
+                    </form>
+                    </div>
+                    <?php } else {
+                        echo '<div class="alert alert-info mt-4"> Your Request Is Still Pending..!!</div>';
+                    } 
+                }
+
+        }?>
+        <?php if(isset($msg)) {echo $msg;} ?>
+         </div>
 
 
 
@@ -186,13 +302,11 @@ if($_SESSION['is_login']){
 
 
 
-
-
-    <div class="footer-top-area">
+         <div class="footer-top-area">
         <div class="zigzag-bottom"></div>
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4 col-sm-6">
                     <div class="footer-about-us">
                         <h2>G<span>rand</span>F<span>rame</span>Z</h2>
                         <p>At Grand Framez we focus on providing excellent services with the highest level of customer satisfaction. with a variety of services to choose from ,we are sure you will be happy working with us.look around at our website and if you have any question please contact us.</p>
@@ -206,40 +320,32 @@ if($_SESSION['is_login']){
                     </div>
                 </div>
                 
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4 col-sm-6">
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">User Navigation </h2>
                         <ul>
-                            <li><a href="#">Login</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">T&C</a></li>
-                            <li><a href="index.php">Front page</a></li>
+                            <li><a href="../login.php">Login</a></li>
+                            <li><a href="../contact.php">Contact</a></li>
+                            <li><a href="../privacypolicy.php">Privacy Policy</a></li>
+                            <li><a href="../t&c.php">T&C</a></li>
+                            <li><a href="../index.php">Front page</a></li>
                         </ul>                        
                     </div>
                 </div>
                 
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4 col-sm-6">
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">Categories</h2>
                         <ul>
-                            <li><a href="#">services</a></li>
+                            <li><a href="../shop.php">services</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="../admin/adminlogin.php">Admin Login</a></li>
                         </ul>                        
                     </div>
                 </div>
                 
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-newsletter">
-                        <h2 class="footer-wid-title">Newsletter</h2>
-                        <p>Sign up to our newsletter and get exclusive offers straight to your inbox!</p>
-                        <div class="newsletter-form">
-                            <form action="#">
-                                <input type="email" placeholder="Type your email">
-                                <input type="submit" value="Subscribe">
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div> <!-- End footer top area -->

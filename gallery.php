@@ -221,7 +221,7 @@
         <div class="zigzag-bottom"></div>
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4 col-sm-6">
                     <div class="footer-about-us">
                         <h2>G<span>rand</span>F<span>rame</span>Z</h2>
                         <p>At Grand Framez we focus on providing excellent services with the highest level of customer satisfaction. with a variety of services to choose from ,we are sure you will be happy working with us.look around at our website and if you have any question please contact us.</p>
@@ -235,40 +235,32 @@
                     </div>
                 </div>
                 
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4 col-sm-6">
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">User Navigation </h2>
                         <ul>
                             <li><a href="login.php">Login</a></li>
                             <li><a href="contact.php">Contact</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">T&C</a></li>
+                            <li><a href="privacypolicy.php">Privacy Policy</a></li>
+                            <li><a href="t&c.php">T&C</a></li>
                             <li><a href="index.php">Front page</a></li>
                         </ul>                        
                     </div>
                 </div>
                 
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4 col-sm-6">
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">Categories</h2>
                         <ul>
                             <li><a href="shop.php">services</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="admin/adminlogin.php">Admin Login</a></li>
                         </ul>                        
                     </div>
                 </div>
                 
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-newsletter">
-                        <h2 class="footer-wid-title">Newsletter</h2>
-                        <p>Sign up to our newsletter and get exclusive offers straight to your inbox!</p>
-                        <div class="newsletter-form">
-                            <form action="#">
-                                <input type="email" placeholder="Type your email">
-                                <input type="submit" value="Subscribe">
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div> <!-- End footer top area -->

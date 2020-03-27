@@ -140,13 +140,84 @@ include('../includes/dbh.inc.php');
     <li class="nav-item"><a class="nav-link" href="request.php"><i class="fa fa-user-plus"></i>Requests</a></li>
     <li class="nav-item"><a class="nav-link" href="photographers.php"><i class="fa fa-camera"></i>Photographers</a></li>
     <li class="nav-item"><a class="nav-link" href="requester.php"><i class="fa fa-users"></i>Requester</a></li>
-    <li class="nav-item"><a class="nav-link" href="sellreport.php"><i class="fa fa-pie-chart"></i>Sales Report</a></li>
     <li class="nav-item"><a class="nav-link" href="workreport.php"><i class="fa fa-line-chart  "></i>Work Report</a></li>
     <li class="nav-item"><a class="nav-link" href="adminchangepassword.php"><i class="fa fa-key "></i>Change Password</a></li>
     </ul>
     </div>
     </nav>
     <!-- End side bar -->
+
+
+
+
+
+<div class="col-sm-9 col-md-10 mt-5">
+<p class="text-center mainmenu-area" style="margin-top:20px; font-size:30px; color:white;"> Work Orders</p>
+<?php
+$sql = "SELECT * FROM assignwork";
+$result = $conn->query($sql);
+if($result->num_rows > 0) {
+echo '<table class=" table"style="background:#dff0d8; color:Black;">';
+echo '<thead >';
+echo '<tr>';
+echo '<th scope="col">Req ID</th>';
+echo '<th scope="col">Req Info</th>';
+echo '<th scope="col">Name</th>';
+echo '<th scope="col">Address</th>';
+echo '<th scope="col">City</th>';
+echo '<th scope="col">Mobile</th>';
+echo '<th scope="col">Photographer</th>';
+echo '<th scope="col">Assigned Booking Date</th>';
+echo '<th scope="col">Action</th>';
+echo '</tr>';
+echo '</thead>';
+echo '<tbody>';
+while ($row = $result->fetch_assoc()){
+    echo '<tr>';
+        echo '<td>'.$row['request_id'].'</td>';
+        echo '<td>'.$row['request_info'].'</td>';
+        echo '<td>'.$row['requester_name'].'</td>';
+        echo '<td>'.$row['requester_add2'].'</td>';
+        echo '<td>'.$row['requester_city'].'</td>';
+        echo '<td >'.$row['requester_mobile'].'</td>';
+        echo '<td>'.$row['assign_tech'].'</td>';
+        echo '<td>'.$row['assign_date'].'</td>';
+        echo '<td>';
+            echo '<form action="viewassignwork.php" method="POST" style="display: inline-block; float: left;">';
+            echo '<input type="hidden" name="id" value='.$row['request_id'].'><button class="btn btn-warning" name="view" value="view" type="submit"><i class="fa fa-eye"></i></button>';
+            echo '</form>';
+
+            echo '<form action="" method="POST" style="display: inline-block;  margin-left: 5px; float: left;">';
+            echo '<input type="hidden" name="id" value='.$row['request_id'].'><button class="btn btn-secondary" name="delete" value="delete" type="submit"><i class="fa fa-trash"></i></button>';
+            echo '</form>';
+        echo '</td>';
+    echo '</tr>';
+}
+echo '</tbody>';
+echo '</table>';
+
+} else {
+    echo 'No Orders Yet..!!';
+}
+
+if(isset($_REQUEST['delete'])){
+$sql= "DELETE FROM assignwork WHERE request_id = {$_REQUEST['id']}";
+if($conn->query($sql) == TRUE){
+    echo '<meta http-equiv="refresh" content= "0;URL=?deleted"/>';
+} else {
+    echo "UNABLE TO DELETE DATA..!!";
+}
+}
+?>
+</div>
+
+
+
+
+
+
+
+
     
 </div> <!--End row -->
 </div>   
@@ -193,7 +264,7 @@ include('../includes/dbh.inc.php');
 
 
 
-    <div class="footer-top-area">
+<div class="footer-top-area">
         <div class="zigzag-bottom"></div>
         <div class="container">
             <div class="row">
@@ -211,40 +282,29 @@ include('../includes/dbh.inc.php');
                     </div>
                 </div>
                 
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4 col-sm-6">
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">User Navigation </h2>
                         <ul>
-                            <li><a href="#">Login</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">T&C</a></li>
-                            <li><a href="index.php">Front page</a></li>
+                            <li><a href="../login.php">Login</a></li>
+                            <li><a href="../contact.php">Contact</a></li>
+                            <li><a href="../privacypolicy.php">Privacy Policy</a></li>
+                            <li><a href="../t&c.php">T&C</a></li>
+                            <li><a href="../index.php">Front page</a></li>
                         </ul>                        
                     </div>
                 </div>
                 
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4 col-sm-6">
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">Categories</h2>
                         <ul>
-                            <li><a href="#">services</a></li>
+                            <li><a href="../shop.php">services</a></li>
                         </ul>                        
                     </div>
                 </div>
                 
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-newsletter">
-                        <h2 class="footer-wid-title">Newsletter</h2>
-                        <p>Sign up to our newsletter and get exclusive offers straight to your inbox!</p>
-                        <div class="newsletter-form">
-                            <form action="#">
-                                <input type="email" placeholder="Type your email">
-                                <input type="submit" value="Subscribe">
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div> <!-- End footer top area -->

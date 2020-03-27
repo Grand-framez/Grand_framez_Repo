@@ -140,15 +140,227 @@ include('../includes/dbh.inc.php');
     <li class="nav-item"><a class="nav-link" href="request.php"><i class="fa fa-user-plus"></i>Requests</a></li>
     <li class="nav-item"><a class="nav-link" href="photographers.php"><i class="fa fa-camera"></i>Photographers</a></li>
     <li class="nav-item"><a class="nav-link" href="requester.php"><i class="fa fa-users"></i>Requester</a></li>
-    <li class="nav-item"><a class="nav-link" href="sellreport.php"><i class="fa fa-pie-chart"></i>Sales Report</a></li>
     <li class="nav-item"><a class="nav-link" href="workreport.php"><i class="fa fa-line-chart  "></i>Work Report</a></li>
     <li class="nav-item"><a class="nav-link" href="adminchangepassword.php"><i class="fa fa-key "></i>Change Password</a></li>
     </ul>
     </div>
     </nav>
     <!-- End side bar -->
+
+
+
+
+    <div class="col-sm-4 mb-5 jumbotron" > <!-- 2nd row -->
+   
+<?php
+$sql = "SELECT request_id, request_info, request_desc, request_date FROM usersubmitrequest";
+$result = $conn->query($sql);
+if($result->num_rows > 0){
+    while($row = $result->fetch_assoc()){ 
+        
+echo '<div class=" card mt-5 mx-5 " style="margin-top:-40px;" >';
+    echo '<div class="form text-center  " >';
+        echo 'Request ID:'. $row['request_id'];
+    echo '</div>';
+    echo '<div class="form text-center table" style="margin-top:-30px;" >';
+    echo '<h5 class="card-title">Request Info:'. $row['request_info'];
+    echo '</h5>';
+    echo '<p class="card-text">'. $row['request_desc'];
+    echo '</p>';
+    echo '<p class="card-text"> Request Date: '. $row['request_date'];
+    echo '</p>';
+echo '<form action="" method="POST">';
+echo '<input type="hidden" name="id" value='. $row["request_id"]. '>';
+echo '<input type="submit"  value="view" name="view"> <br>';
+echo '<input type="submit"  value="Delete" name="close">';
+echo '</form>';
+    echo '</div><br><br>';
+echo '</div>';
+    }
+}
+?>
+</div>
+
+
+<?php
+if(isset($_REQUEST['view'])){
+    $sql = "SELECT * FROM usersubmitrequest WHERE request_id = {$_REQUEST['id']}";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+}
+if(isset($_REQUEST['close'])){
+    $sql = "DELETE FROM usersubmitrequest WHERE request_id = {$_REQUEST['id']}";
+    if($conn->query($sql) == TRUE){
+        echo '<meta http-equiv="refresh" content= "0;URL=?closed" />';
+    } else {
+        echo "UNABLE TO DELETE";
+    }
+}
+if(isset($_REQUEST['assign'])){
+    if(($_REQUEST['requestid'] == "") || ($_REQUEST['requestinfo'] == "") || ($_REQUEST['requestdesc'] == "") || ($_REQUEST['requestername'] == "") || ($_REQUEST['requesteradd1'] == "") || ($_REQUEST['requesteradd2'] == "") || ($_REQUEST['requestermobile'] == "") || ($_REQUEST['requesteremail'] == "") || ($_REQUEST['requestercity'] == "") || ($_REQUEST['requesterstate'] == "") || ($_REQUEST['requesterzip'] == "") || ($_REQUEST['inputdate'] == "") || ($_REQUEST['assigntech'] == "") ){
+        $msg = '<div class="alert alert-warning col-sm-6 ml-5 mt-2">Fill All Fields</div>';
+    } else {
+        $rid = $_REQUEST['requestid'];
+        $rinfo = $_REQUEST['requestinfo'];
+        $rdesc = $_REQUEST['requestdesc'];
+        $rname = $_REQUEST['requestername'];
+        $radd1 = $_REQUEST['requesteradd1'];
+        $radd2 = $_REQUEST['requesteradd2'];
+        $rcity = $_REQUEST['requestercity'];
+        $rstate = $_REQUEST['requesterstate'];
+        $rzip = $_REQUEST['requesterzip'];
+        $remail = $_REQUEST['requesteremail'];
+        $rmobile = $_REQUEST['requestermobile'];
+        $rassigntech = $_REQUEST['assigntech'];
+        $rdate = $_REQUEST['inputdate'];
+
+        $sql = "INSERT INTO assignwork (request_id, request_info, request_desc, requester_name, requester_add1, requester_add2, requester_city, requester_state, requester_zip, requester_email, requester_mobile, assign_tech, assign_date) VALUES ('$rid', '$rinfo', '$rdesc', '$rname', '$radd1', '$radd2', '$rcity', '$rstate', '$rzip', '$remail', '$rmobile', '$rassigntech', '$rdate')";
+        if($conn->query($sql) == TRUE){
+            $msg = '<div class="alert alert-success col-sm-6 ml-5 mt-2">Order Assigned Successfully.!!</div>';
+        } else {
+            $msg = '<div class="alert alert-warning col-sm-6 ml-5 mt-2">Unable to Assign.!!</div>';
+        }
+    }
+}
+?>
+
+
+
+
+
+<div class="form col-sm-5 mt-5 jumbotron"  style="margin-top:0px; margin-left:50px;">
+<form  action="" method="post" class="mx-5">
+
+<h5 class="text-center">Assign Work Order Request</h5>
+
+<div class="form-group col-md-12">
+    <div class="form-group">
+            
+              Request ID<span class="req">*</span>
+            
+            <input type="text"  name="requestid" id="inputRequestId" value="<?php if(isset($row['request_id']))echo $row['request_id']; ?>" readonly>
+          </div>
+          </div>
+
+    <div class="form-group col-md-12">
+    <div class="form-group">
+            
+              Request Info.<span class="req">*</span>
+            
+            <input type="text"  name="requestinfo" id="inputRequestInfo" value="<?php if(isset($row['request_info']))echo $row['request_info']; ?>">
+          </div>
+          </div>
+          <div class="form-group col-md-12">
+          <div class="form-group"  >
+            
+              Description<span class="req"></span>
+           
+            <input type="text"  name="requestdesc" id="inputRequestDescription" value="<?php if(isset($row['request_desc']))echo $row['request_desc']; ?>" >
+          </div>
+          </div>
+          <div class="form-group col-md-12">
+          <div class="form-group">
+          
+              Name<span class="req"></span>
+            
+            <input type="text"  name="requestername" id="inputName" value="<?php if(isset($row['requester_name']))echo $row['requester_name']; ?>">
+          </div>
+          </div>
+          <div class="form-row">
+          <div class="form-group col-md-6">
+          
+              Address Line 1<span class="req"></span>
+            
+            <input type="text"  name="requesteradd1" id="inputAddress" value="<?php if(isset($row['requester_add1']))echo $row['requester_add1']; ?>">
+          </div>
+          <div class="form-group col-md-6">
+          
+              Address Line 2<span class="req"></span>
+            
+            <input type="text"  name="requesteradd2" id="inputAddress2" value="<?php if(isset($row['requester_add2']))echo $row['requester_add2']; ?>">
+          </div>
+          </div>
+          <div class="form-now">
+          <div class="form-group col-md-6">
+
+          E-mail<span class="req"></span>
+          <input type="email"  name="requesteremail" id="inputEmail" value="<?php if(isset($row['requester_email']))echo $row['requester_email']; ?>">
+          </div>
+          <div class="form-group col-md-6">
+
+          Mobile<span class="req"></span>
+          <input type="text"  name="requestermobile" id="inputMobile" pattern="[0-9]{10,13}" value="<?php if(isset($row['requester_mobile']))echo $row['requester_mobile']; ?>">
+          </div>
+          </div>
+          <div class="form-now">
+          <div class="form-group col-md-6">
+
+          City<span class="req"></span>
+          <input type="text"  name="requestercity" id="inputCity" value="<?php if(isset($row['requester_city']))echo $row['requester_city']; ?>">
+          </div>
+          <div class="form-group col-md-6">
+
+          State<span class="req"></span>
+          <input type="text"  name="requesterstate" id="inputState" value="<?php if(isset($row['requester_state']))echo $row['requester_state']; ?>">
+          </div>
+          </div>
+          <div class="form-now">
+          <div class="form-group col-md-6">
+
+          Zip<span class="req"></span>
+          <input type="text"  name="requesterzip" id="inputZip"  pattern="[0-9]{4}" value="<?php if(isset($row['requester_zip']))echo $row['requester_zip']; ?>">
+          </div>
+
+          <div class="form-group col-md-6">
+
+          Date<span class="req"></span>
+          <input type="date"  name="inputdate" id="inputDate">
+          </div>
+          </div>
+
+          <div class="form-group col-md-12">
+          <div class="form-group">
+          
+              Assign Photographer<span class="req"></span>
+            
+            <input type="text"  name="assigntech" id="assigntech">
+          </div>
+          </div>
+          
+
+          <button type="submit" name="assign" class="button button-block"/>Assign</button>
+          
+         
+          </form>
+          <?php if(isset($msg)){echo $msg; } ?>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 </div> <!--End row -->
+
+
+
+
+
+
+
+
+
+
+
 </div>   
 <!--End container -->
 
@@ -193,7 +405,10 @@ include('../includes/dbh.inc.php');
 
 
 
-    <div class="footer-top-area">
+
+
+
+<div class="footer-top-area">
         <div class="zigzag-bottom"></div>
         <div class="container">
             <div class="row">
@@ -211,40 +426,29 @@ include('../includes/dbh.inc.php');
                     </div>
                 </div>
                 
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4 col-sm-6">
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">User Navigation </h2>
                         <ul>
-                            <li><a href="#">Login</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">T&C</a></li>
-                            <li><a href="index.php">Front page</a></li>
+                            <li><a href="../login.php">Login</a></li>
+                            <li><a href="../contact.php">Contact</a></li>
+                            <li><a href="../privacypolicy.php">Privacy Policy</a></li>
+                            <li><a href="../t&c.php">T&C</a></li>
+                            <li><a href="../index.php">Front page</a></li>
                         </ul>                        
                     </div>
                 </div>
                 
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4 col-sm-6">
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">Categories</h2>
                         <ul>
-                            <li><a href="#">services</a></li>
+                            <li><a href="../shop.php">services</a></li>
                         </ul>                        
                     </div>
                 </div>
                 
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-newsletter">
-                        <h2 class="footer-wid-title">Newsletter</h2>
-                        <p>Sign up to our newsletter and get exclusive offers straight to your inbox!</p>
-                        <div class="newsletter-form">
-                            <form action="#">
-                                <input type="email" placeholder="Type your email">
-                                <input type="submit" value="Subscribe">
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div> <!-- End footer top area -->
