@@ -1,6 +1,10 @@
 <?php
     session_start();
 ?>
+
+<!--comment1-->
+<!--comment2-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
