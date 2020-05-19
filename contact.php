@@ -129,14 +129,14 @@
     <?php
     if (isset ($_GET['mail'])){
   if ($_GET['mail'] == "sent") {
-  echo 'mail sent!!!';
+    $msg = '<div class="alert alert-success col-sm-6 ml-5 mt-2">Message sent.!!</div>';
 }
 }
 ?>
 <?php
 if (isset($_GET['error'])) {
   if ($_GET['error'] == "emptyfields") {
-    echo 'Please Fill in all fields!';
+    $msg = '<div class="alert alert-warning col-sm-6 ml-5 mt-2">Please Fill in All fields.!!</div>';
   }
 }
   ?>
@@ -179,7 +179,9 @@ if (isset($_GET['error'])) {
 					<button class="contact100-form-btn" type="submit" name="submit">
 						Send Message
 					</button>
+                    
 				</div>
+                <?php if(isset($msg)){echo $msg; } ?>
 			</form>
 
 			<div class="contact100-more flex-col-c-m" style="background-image: url('images/bg-01.jpg');">
@@ -295,13 +297,7 @@ if (isset($_GET['error'])) {
                     </div>
                 </div>
                 
-                <div class="col-md-4">
-                    <div class="footer-card-icon">
-                        <i class="fa fa-cc-mastercard"></i>
-                        <i class="fa fa-cc-paypal"></i>
-                        <i class="fa fa-cc-visa"></i>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div> <!-- End footer bottom area -->

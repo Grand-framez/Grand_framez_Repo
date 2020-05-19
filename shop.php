@@ -121,9 +121,7 @@
                             <ins>$125.00 AUD</ins>
                         </div>  
                         
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="cart.php">Add to cart</a>
-                        </div>                       
+                                               
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
@@ -136,9 +134,7 @@
                             <ins>$160.00 AUD</ins> 
                         </div>  
                         
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="cart.php">Add to cart</a>
-                        </div>                       
+                                               
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
@@ -151,9 +147,7 @@
                             <ins>$250.00 AUD</ins> 
                         </div>  
                         
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="cart.php">Add to cart</a>
-                        </div>                       
+                                               
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
@@ -166,9 +160,7 @@
                             <ins>$450.00 AUD</ins> 
                         </div>  
                         
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="cart.php">Add to cart</a>
-                        </div>                       
+                                               
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
@@ -181,9 +173,7 @@
                             <ins>$450.00 AUD</ins>
                         </div>  
                         
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="cart.php">Add to cart</a>
-                        </div>                       
+                                               
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
@@ -196,9 +186,7 @@
                             <ins>$425.00 AUD</ins>
                         </div>  
                         
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="cart.php">Add to cart</a>
-                        </div>                       
+                                               
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
@@ -211,9 +199,7 @@
                             <ins>$325.00 AUD</ins>
                         </div>  
                         
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="cart.php">Add to cart</a>
-                        </div>                       
+                                               
                     </div>
                 </div>
 
@@ -238,9 +224,7 @@
                             <ins>$1250.00 AUD</ins>
                         </div>  
                         
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="cart.php">Add to cart</a>
-                        </div>                       
+                                               
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
@@ -253,9 +237,7 @@
                             <ins>$800.00 AUD</ins>
                         </div>  
                         
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="cart.php">Add to cart</a>
-                        </div>                       
+                                               
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
@@ -268,9 +250,7 @@
                             <ins>$450.00 AUD</ins>
                         </div>  
                         
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="cart.php">Add to cart</a>
-                        </div>                       
+                                               
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
@@ -283,9 +263,7 @@
                             <ins>$650.00 AUD</ins>
                         </div>  
                         
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="cart.php">Add to cart</a>
-                        </div>                       
+                                               
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
@@ -298,9 +276,7 @@
                             <ins>$750.00 AUD</ins>
                         </div>  
                         
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="cart.php">Add to cart</a>
-                        </div>                       
+                                               
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
@@ -313,9 +289,7 @@
                             <ins>$1000.00 AUD</ins>
                         </div>  
                         
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="cart.php">Add to cart</a>
-                        </div>                       
+                                              
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
@@ -328,9 +302,7 @@
                             <ins>$500.00 AUD</ins>
                         </div>  
                         
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="cart.php">Add to cart</a>
-                        </div>                       
+                                               
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
@@ -343,9 +315,7 @@
                             <ins>$2000.00 AUD</ins>
                         </div>  
                         
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="cart.php">Add to cart</a>
-                        </div>                       
+                                               
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
@@ -358,9 +328,7 @@
                             <ins>$800.00 AUD</ins>
                         </div>  
                         
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="cart.php">Add to cart</a>
-                        </div>                       
+                                               
                     </div>
                 </div>
             </div>
@@ -427,13 +395,7 @@
                     </div>
                 </div>
                 
-                <div class="col-md-4">
-                    <div class="footer-card-icon">
-                        <i class="fa fa-cc-mastercard"></i>
-                        <i class="fa fa-cc-paypal"></i>
-                        <i class="fa fa-cc-visa"></i>
-                    </div>
-                </div>
+               
             </div>
         </div>
     </div> <!-- End footer bottom area -->

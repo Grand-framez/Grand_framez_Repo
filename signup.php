@@ -108,25 +108,35 @@
 <?php
 if (isset($_GET['error'])) {
   if ($_GET['error'] == "emptyfields") {
-    echo 'Please Fill in all fields!';
+     $msg = '<div class="alert alert-warning col-sm-6 ml-5 mt-2">Please Fill in All fields.!!</div>';
   }
   else if ($_GET['error'] == "invalidmail") {
-    echo 'Please write valid email address!!';
+    $msg = '<div class="alert alert-warning col-sm-6 ml-5 mt-2">Please Write valid email address.!!</div>';
   }
   else if ($_GET['error'] == "passwordcheck") {
-    echo 'your password does not match!!';
+    $msg = '<div class="alert alert-warning col-sm-6 ml-5 mt-2">Your Password does not match.!!</div>';
   }
   else if ($_GET['error'] == "userregistered") {
-    echo 'You are already registered!!';
+    $msg = '<div class="alert alert-warning col-sm-6 ml-5 mt-2">You are already registred.!!</div>';
   }
 }
 else if (isset ($_GET['signup'])){
   if ($_GET['signup'] == "success") {
-  echo 'signup successful!!!';
+    $msg = '<div class="alert alert-success col-sm-6 ml-5 mt-2">Sign-up Successful.!!</div>';
 }
 }
 ?>
 
+
+<?php
+if (isset($_GET['error'])) {
+  if ($_GET['error'] == "wrongpwd") {
+    $msg = '<div class="alert alert-warning ">Please Enter Correct Password.!!</div>';
+  } else if ($_GET['error'] == "nouser") {
+    $msg = '<div class="alert alert-warning ">You have not registered, Please Sign-up First.!!</div>';
+  }
+}
+  ?>
 <div class="form">
       
       <ul class="tab-group">
@@ -177,6 +187,7 @@ else if (isset ($_GET['signup'])){
             <input type="password" name="pwd-repeat" required autocomplete="off"/>
           </div>
           <button type="submit" name="signup-submit" class="button button-block"/>Get Started</button>
+          <?php if(isset($msg)){echo $msg; } ?>
           </form>
 
         </div>
@@ -203,7 +214,7 @@ else if (isset ($_GET['signup'])){
           <p class="forgot"><a href="reset-password.php">Forgot Password?</a></p>
           
           <button type="submit" name="login-submit" class="button button-block"/>Log In</button>
-          
+          <?php if(isset($msg)){echo $msg; } ?>
           </form>
 
         </div>
@@ -272,13 +283,7 @@ else if (isset ($_GET['signup'])){
                     </div>
                 </div>
                 
-                <div class="col-md-4">
-                    <div class="footer-card-icon">
-                        <i class="fa fa-cc-mastercard"></i>
-                        <i class="fa fa-cc-paypal"></i>
-                        <i class="fa fa-cc-visa"></i>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div> <!-- End footer bottom area -->

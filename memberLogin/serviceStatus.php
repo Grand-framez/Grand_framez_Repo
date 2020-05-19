@@ -154,8 +154,8 @@ if($_SESSION['is_login']){
     <div class="sidebar-sticky">
     <ul class="nav flex-column">
     <li class="nav-item"><a class="nav-link" href="user.login.success.php"><i class="fa fa-user"></i>profile</a></li>
-    <li class="nav-item"><a class="nav-link" href="submitRequest.php"><i class="fa fa-plus"></i>Submit request</a></li>
-    <li class="nav-item"><a class="nav-link" href="serviceStatus.php"><i class="fa fa-spinner "></i>Service status</a></li>
+    <li class="nav-item"><a class="nav-link" href="submitRequest.php"><i class="fa fa-plus"></i>Book</a></li>
+    <li class="nav-item"><a class="nav-link" href="serviceStatus.php"><i class="fa fa-spinner "></i>Booking Status</a></li>
     <li class="nav-item"><a class="nav-link" href="changePassword.php"><i class="fa fa-key "></i>Change password</a></li>
     </ul>
     </div>
@@ -359,13 +359,7 @@ if($_SESSION['is_login']){
                     </div>
                 </div>
                 
-                <div class="col-md-4">
-                    <div class="footer-card-icon">
-                        <i class="fa fa-cc-mastercard"></i>
-                        <i class="fa fa-cc-paypal"></i>
-                        <i class="fa fa-cc-visa"></i>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div> <!-- End footer bottom area -->

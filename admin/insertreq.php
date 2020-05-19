@@ -145,10 +145,10 @@ else if (isset ($_GET['signup'])){
     <div class="sidebar-sticky">
     <ul class="nav flex-column">
     <li class="nav-item"><a class="nav-link" href="dashboard.php"><i class="fa fa-tachometer"></i>Dashboard</a></li>
-    <li class="nav-item"><a class="nav-link" href="workorder.php"><i class="fa fa-sort-amount-asc"></i>Work Order</a></li>
-    <li class="nav-item"><a class="nav-link" href="request.php"><i class="fa fa-user-plus"></i>Requests</a></li>
+    <li class="nav-item"><a class="nav-link" href="workorder.php"><i class="fa fa-sort-amount-asc"></i>Accepted Bookings</a></li>
+    <li class="nav-item"><a class="nav-link" href="request.php"><i class="fa fa-user-plus"></i>Booking Requests</a></li>
     <li class="nav-item"><a class="nav-link" href="photographers.php"><i class="fa fa-camera"></i>Photographers</a></li>
-    <li class="nav-item"><a class="nav-link" href="requester.php"><i class="fa fa-users"></i>Requester</a></li>
+    <li class="nav-item"><a class="nav-link" href="requester.php"><i class="fa fa-users"></i>Clients</a></li>
     <li class="nav-item"><a class="nav-link" href="workreport.php"><i class="fa fa-line-chart  "></i>Work Report</a></li>
     <li class="nav-item"><a class="nav-link" href="adminchangepassword.php"><i class="fa fa-key "></i>Change Password</a></li>
     </ul>
@@ -319,13 +319,7 @@ else if (isset ($_GET['signup'])){
                     </div>
                 </div>
                 
-                <div class="col-md-4">
-                    <div class="footer-card-icon">
-                        <i class="fa fa-cc-mastercard"></i>
-                        <i class="fa fa-cc-paypal"></i>
-                        <i class="fa fa-cc-visa"></i>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div> <!-- End footer bottom area -->

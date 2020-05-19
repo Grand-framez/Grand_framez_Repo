@@ -106,9 +106,9 @@ if (isset($_GET["newpwd"])) {
 <?php
 if (isset($_GET['error'])) {
   if ($_GET['error'] == "wrongpwd") {
-    echo 'Please Enter correct Password..!!';
+    $msg = '<div class="alert alert-warning ">Please Enter Correct Password.!!</div>';
   } else if ($_GET['error'] == "nouser") {
-    echo 'You have not registred, please sign up..!!';
+    $msg = '<div class="alert alert-warning ">You have not registered, Please Sign-up First.!!</div>';
   }
 }
   ?>
@@ -144,9 +144,10 @@ if (isset($_GET['error'])) {
           <p class="forgot"><a href="reset-password.php">Forgot Password?</a></p>
           
           <button type="submit" name="login-submit" class="button button-block"/>Log In</button>
+          <?php if(isset($msg)){echo $msg; } ?>
           
           </form>
-        
+          
         </div>
         
       </div><!-- tab-content -->
@@ -214,90 +215,11 @@ if (isset($_GET['error'])) {
                     </div>
                 </div>
                 
-                <div class="col-md-4">
-                    <div class="footer-card-icon">
-                        <i class="fa fa-cc-mastercard"></i>
-                        <i class="fa fa-cc-paypal"></i>
-                        <i class="fa fa-cc-visa"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End footer bottom area --><div class="footer-top-area">
-        <div class="zigzag-bottom"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-about-us">
-                        <h2>G<span>rand</span>F<span>rame</span>Z</h2>
-                        <p>At Grand Framez we focus on providing excellent services with the highest level of customer satisfaction. with a variety of services to choose from ,we are sure you will be happy working with us.look around at our website and if you have any question please contact us.</p>
-                        <div class="footer-social">
-                            <a href="https://www.facebook.com/grandframez" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href="https://twitter.com/grandframez" target="_blank"><i class="fa fa-twitter"></i></a>
-                            <a href="https://www.youtube.com/channel/UCiwPYz5XxEbKkB-ohrnp31g" target="_blank"><i class="fa fa-youtube"></i></a>
-                            <a href="https://plus.google.com/grandframez" target="_blank"><i class="fa fa-google-plus"></i></a>
-                            <a href="https://www.instagram.com/grandframez/" target="_blank"><i class="fa fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
                 
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-menu">
-                        <h2 class="footer-wid-title">User Navigation </h2>
-                        <ul>
-                            <li><a href="login.php">Login</a></li>
-                            <li><a href="contact.php">Contact</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">T&C</a></li>
-                            <li><a href="index.php">Front page</a></li>
-                        </ul>                        
-                    </div>
-                </div>
-                
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-menu">
-                        <h2 class="footer-wid-title">Categories</h2>
-                        <ul>
-                            <li><a href="shop.php">services</a></li>
-                        </ul>                        
-                    </div>
-                </div>
-                
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-newsletter">
-                        <h2 class="footer-wid-title">Newsletter</h2>
-                        <p>Sign up to our newsletter and get exclusive offers straight to your inbox!</p>
-                        <div class="newsletter-form">
-                            <form action="#">
-                                <input type="email" placeholder="Type your email">
-                                <input type="submit" value="Subscribe">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End footer top area -->
-    
-    <div class="footer-bottom-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="copyright">
-                        <p>&copy; 2020 Grand FrameZ. All Rights Reserved.</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="footer-card-icon">
-                        <i class="fa fa-cc-mastercard"></i>
-                        <i class="fa fa-cc-paypal"></i>
-                        <i class="fa fa-cc-visa"></i>
-                    </div>
-                </div>
             </div>
         </div>
     </div> <!-- End footer bottom area -->
+        
    
     <!-- Latest jQuery form server -->
     <script src="https://code.jquery.com/jquery.min.js"></script>

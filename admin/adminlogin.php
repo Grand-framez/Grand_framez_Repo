@@ -147,7 +147,7 @@ if(!isset($_SESSION['is_adminlogin'])){
           
           
           <button type="submit" name="login-submit" class="button button-block"/>Log In</button>
-          
+          <?php if(isset($msg)){echo $msg; } ?>
           </form>
         
         </div>
@@ -214,13 +214,7 @@ if(!isset($_SESSION['is_adminlogin'])){
                     </div>
                 </div>
                 
-                <div class="col-md-4">
-                    <div class="footer-card-icon">
-                        <i class="fa fa-cc-mastercard"></i>
-                        <i class="fa fa-cc-paypal"></i>
-                        <i class="fa fa-cc-visa"></i>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div> <!-- End footer bottom area -->
