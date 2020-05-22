@@ -85,11 +85,11 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.php">Home</a></li>
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="about us.php">About Us</a></li>
                         <li><a href="shop.php">Services</a></li>
-                        <li><a href="#">Sign Up</a></li>
-                        <li><a href="#">Gallery</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="signup.php">Sign Up</a></li>
+                        <li><a href="gallery.php">Gallery</a></li>
+                        <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </div>  
             </div>
