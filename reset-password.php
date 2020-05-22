@@ -99,7 +99,7 @@
 <?php
  if (isset ($_GET['reset'])){
     if ($_GET['reset'] == "success") {
-    echo 'check your e-mail!!';
+        $msg = '<div class="alert alert-success col-sm-6 ml-5 mt-2">Please Check Your E-mail.!!</div>';
   }
   }
 ?>
@@ -118,7 +118,7 @@
             <input type="text" name="email" required autocomplete="off"/>
           </div>
           <button type="submit" name="reset-request-submit" class="button button-block"/>Receive new Password by mail</button>
-          
+          <?php if(isset($msg)){echo $msg; } ?>
           </form>
         </div>
     </div>
